@@ -3,7 +3,17 @@
     <style name="Base.Theme.BudgetIn" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/background</item>
+        <item name="colorPrimaryVariant">@color/background</item>
+        <item name="colorOnPrimary">@color/background</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Theme.BudgetIn" parent="Base.Theme.BudgetIn" />
+    
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo2</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.BudgetIn</item>
+    </style>
 </resources>
