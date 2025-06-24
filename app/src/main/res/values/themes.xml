@@ -16,4 +16,8 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo2</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.BudgetIn</item>
     </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/item_icons_selector</item>
+    </style>
 </resources>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BudgetIn</string>
+    <string name="home">Home</string>
+    <string name="add">Add</string>
+    <string name="chart">Chart</string>
+    <string name="settings">Settings</string>
+
 </resources>

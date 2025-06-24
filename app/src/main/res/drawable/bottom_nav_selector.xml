@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna saat tombol dipilih -->
+    <item android:color="@color/item_icons_selector" android:state_checked="true"/>
+    <!-- Ripple saat fokus (opsional) -->
+    <item android:color="@color/item_icons_selector" android:state_focused="true"/>
+    <!-- Default -->
+    <item android:color="@android:color/transparent"/>
+</selector>

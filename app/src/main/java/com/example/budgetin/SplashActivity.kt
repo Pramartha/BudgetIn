@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
         // Delay 2 detik, lalu pindah ke LoginActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, DashboardActivity::class.java))
             finish()
         }, 2000)
     }

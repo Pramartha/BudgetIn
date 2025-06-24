@@ -4,5 +4,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#0068FF</color>
+    <color name="items_backgorund">#DFEDF7</color>
+    <color name="line_icons">#33363F</color>
+    <color name="item_icons_selector">#B363D3FD</color>
+
 </resources>
+
 

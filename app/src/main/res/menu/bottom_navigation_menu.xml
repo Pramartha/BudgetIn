@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:icon="@drawable/home_page"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/item_add"
+        android:icon="@drawable/plus_math"
+        android:title="@string/add" />
+    <item
+        android:id="@+id/item_chart"
+        android:icon="@drawable/bar_chart"
+        android:title="@string/chart" />
+    <item
+        android:id="@+id/item_settings"
+        android:icon="@drawable/settings"
+        android:title="@string/settings" />
+</menu>
