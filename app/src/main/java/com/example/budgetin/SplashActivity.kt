@@ -12,9 +12,20 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Delay 2 detik, lalu pindah ke LoginActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, DashboardActivity::class.java))
+            val prefs = getSharedPreferences("BudgetInPrefs", MODE_PRIVATE)
+            val username = prefs.getString("username", null)
+            val password = prefs.getString("password", null)
+
+            val next = if (username == null) {
+                EnterNameActivity::class.java
+            } else if (password != null) {
+                LoginActivity::class.java
+            } else {
+                DashboardActivity::class.java
+            }
+
+            startActivity(Intent(this, next))
             finish()
         }, 2000)
     }
