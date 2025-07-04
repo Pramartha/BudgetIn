@@ -9,7 +9,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
         <!-- Greeting -->
         <TextView
@@ -17,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hi, Dodi\nGood Morning"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:fontFamily="sans-serif-medium"
             android:lineSpacingExtra="4dp" />
@@ -27,39 +28,169 @@
             android:id="@+id/time_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="08:20\n06 Juni 2025"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="8dp" />
+            android:layout_gravity="center_horizontal"/>
 
         <!-- Goal Info -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvGoalTitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Goals : McLaren"
-            android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:layout_marginTop="12dp"/>
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
 
-        <!-- Progress Bar Dummy -->
         <ProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressGoal"
             android:layout_width="match_parent"
-            android:layout_height="8dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="8dp"
             android:progress="30"
             android:max="100"
-            android:progressTint="@color/white"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@android:color/white"/>
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/progress_goal_drawable" />
 
         <TextView
+            android:id="@+id/tvGoalTarget"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rp10.000.000.000,00"
-            android:textColor="@android:color/white"
+            android:text="Rp.10.000.000,00"
             android:textSize="14sp"
-            android:gravity="end"
-            android:layout_marginTop="4dp" />
+            android:textColor="@android:color/black"
+            android:layout_marginTop="4dp"
+            android:gravity="end"/>
+
+        <!-- Ringkasan Keuangan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/summary_background"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="20dp">
+
+            <!-- Ringkasan Keuangan -->
+            <LinearLayout
+                android:id="@+id/layoutSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- Total -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/summary_background"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotalAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp.7.500.000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Income -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/summary_background"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Income"
+                        android:textColor="#388E3C"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp.10.000.000"
+                        android:textColor="#388E3C"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Expense -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/summary_background"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expense"
+                        android:textColor="@color/red"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvExpense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp.2.500.000"
+                        android:textColor="@color/red"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Judul Transaksi Terbaru -->
+        <TextView
+            android:id="@+id/tvRecentTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transaksi Terbaru"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="never"
+            android:nestedScrollingEnabled="false"/>
+
     </LinearLayout>
 </ScrollView>

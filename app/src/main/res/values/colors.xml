@@ -3,6 +3,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#D32F2F</color>
+    <color name="green">#37A500</color>
     <color name="background">#0068FF</color>
     <color name="items_backgorund">#DFEDF7</color>
     <color name="line_icons">#33363F</color>
