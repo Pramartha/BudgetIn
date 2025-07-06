@@ -34,4 +34,20 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:gravity="end" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textColor="#888888"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipe"
+        android:textColor="#888888"
+        android:textSize="14sp" />
 </LinearLayout>

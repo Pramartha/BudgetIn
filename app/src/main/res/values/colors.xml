@@ -9,6 +9,10 @@
     <color name="items_backgorund">#DFEDF7</color>
     <color name="line_icons">#33363F</color>
     <color name="item_icons_selector">#B363D3FD</color>
+    <color name="colorPrimary">#0068FF</color>
+    <color name="colorIncome">#37A500</color>
+    <color name="colorOutcome">#D32F2F</color>
+    <color name="colorAccent">#FF5722</color>
 
 </resources>
 

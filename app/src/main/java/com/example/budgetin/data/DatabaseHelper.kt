@@ -29,7 +29,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             CREATE TABLE categories (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
-                type TEXT NOT NULL CHECK(type IN ('income', 'expense'))
+                type TEXT NOT NULL CHECK(type IN ('Expenses', 'Revenue', 'Assets'))
             )
         """)
 
@@ -54,6 +54,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 FOREIGN KEY (goal_id) REFERENCES goals(id)
             )
         """)
+        // Tambahkan kategori default
+        insertDefaultCategories(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -140,9 +142,50 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return list
     }
 
+    fun insertTransaction(transaction: Transaction): Long {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put("title", transaction.title)
+            put("amount", transaction.amount)
+            put("date", transaction.date)
+            put("type", transaction.type)
+            put("category_id", transaction.categoryId)
+            put("goal_id", transaction.goalId)
+        }
+        return db.insert("transactions", null, values)
+    }
+
     private fun Cursor.getIntOrNull(columnName: String): Int? {
         val idx = getColumnIndex(columnName)
         return if (isNull(idx)) null else getInt(idx)
     }
 
+    private fun insertDefaultCategories(db: SQLiteDatabase) {
+        val categories = listOf(
+            // Expenses
+            "Transportasi" to "Expenses",
+            "Makanan" to "Expenses",
+            "Skincare" to "Expenses",
+            "Hobby" to "Expenses",
+            "Urgent" to "Expenses",
+            "Accesories" to "Expenses",
+            // Revenue
+            "Gaji" to "Revenue",
+            "Untung Jualan" to "Revenue",
+            "Bonus" to "Revenue",
+            "Pendapatan Lainnya" to "Revenue",
+            // Assets
+            "Tabungan" to "Assets",
+            "Investasi" to "Assets",
+            "Properti" to "Assets",
+            "Aset Lainnya" to "Assets"
+        )
+        for ((name, type) in categories) {
+            val values = ContentValues().apply {
+                put("name", name)
+                put("type", type)
+            }
+            db.insert("categories", null, values)
+        }
+    }
 }

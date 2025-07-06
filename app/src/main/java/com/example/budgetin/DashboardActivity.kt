@@ -6,9 +6,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.budgetin.ui.home.HomeFragment
-import com.example.budgetin.ui.home.AddFragment
-import com.example.budgetin.ui.home.ChartFragment
+import com.example.budgetin.AddFragment
+import com.example.budgetin.HomeFragment
+import com.example.budgetin.ChartFragment
+import com.example.budgetin.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -55,13 +56,11 @@ class DashboardActivity : AppCompatActivity() {
                 R.id.item_settings -> SettingsFragment()
                 else -> null
             }
-
             selectedFragment?.let {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, it)
                     .commit()
             }
-
             true
         }
     }
