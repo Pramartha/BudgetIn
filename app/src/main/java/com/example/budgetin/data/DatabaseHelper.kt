@@ -130,9 +130,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     amount = cursor.getDouble(cursor.getColumnIndexOrThrow("amount")),
                     date = cursor.getString(cursor.getColumnIndexOrThrow("date")),
                     type = cursor.getString(cursor.getColumnIndexOrThrow("type")),
-                    categoryId = cursor.getInt(cursor.getColumnIndexOrThrow("category_id")),
+                    categoryId = cursor.getIntOrNull("category_id"),
                     goalId = cursor.getIntOrNull("goal_id")
-
                 )
                 list.add(tx)
             } while (cursor.moveToNext())

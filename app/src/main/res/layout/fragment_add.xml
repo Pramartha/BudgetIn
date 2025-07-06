@@ -1,42 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    android:background="@drawable/bg_gradient"
+    android:padding="0dp">
 
-    <!-- Area konten utama dengan gradient background -->
     <LinearLayout
-        android:id="@+id/main_content_area"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/bg_gradient"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:gravity="center_horizontal"
+        android:padding="0dp">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container"
-            android:name="androidx.fragment.app.Fragment"
+        <!-- Card/Form putih membulat -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:elevation="4dp"
+            android:clipToOutline="true"
+            android:backgroundTint="@android:color/white"
+            android:backgroundTintMode="src_in"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/add"
-            android:textAlignment="center"
-            android:textSize="40sp"
-            android:textStyle="bold">
+            <!-- Tipe Transaksi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipe Transaksi"
+                android:textStyle="bold"
+                android:textColor="#0068FF"
+                android:layout_marginBottom="8dp"/>
 
-        </TextView>
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Kategori -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
+                android:textStyle="bold"
+                android:textColor="#0068FF"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tanggal -->
+            <EditText
+                android:id="@+id/et_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tanggal (yyyy-mm-dd)"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Amount -->
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jumlah"
+                android:inputType="number"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tv_amount_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp0,00"
+                android:textSize="16sp"
+                android:textColor="#0068FF"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Title -->
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Judul"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Message -->
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="Pesan tambahan (opsional)"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Tombol Simpan -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_button_rounded"/>
+        </LinearLayout>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
