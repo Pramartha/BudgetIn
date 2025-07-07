@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- latar persegi membulat -->
+    <path
+        android:fillColor="#6BB8FF"
+    android:pathData="
+    M3,0
+    H21
+    C22.66,0 24,1.34 24,3
+    V21
+    C24,22.66 22.66,24 21,24
+    H3
+    C1.34,24 0,22.66 0,21
+    V3
+    C0,1.34 1.34,0 3,0
+    Z" />
+
+    <!-- ikon “tumpukan” sederhana -->
+    <!-- baris 1 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,8 H18 V10 H6 Z" />
+    <!-- baris 2 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,11 H18 V13 H6 Z" />
+    <!-- baris 3 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,14 H18 V16 H6 Z" />
+</vector>
