@@ -12,7 +12,7 @@
         android:title="@string/add" />
     <item
         android:id="@+id/item_chart"
-        android:icon="@drawable/ic_chart"
+        android:icon="@drawable/bar_chart"
         android:title="@string/chart" />
     <item
         android:id="@+id/item_settings"
