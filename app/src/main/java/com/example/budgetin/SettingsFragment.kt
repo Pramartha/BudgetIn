@@ -14,27 +14,27 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
-
+        
         // Set click listeners for navigation
         view.findViewById<View>(R.id.btnNotificationSettings).setOnClickListener {
             navigateToFragment(NotificationSettingsFragment())
         }
-
+        
         view.findViewById<View>(R.id.btnPinSettings).setOnClickListener {
             navigateToFragment(PinSettingsFragment())
         }
-
+        
         view.findViewById<View>(R.id.btnFontSettings).setOnClickListener {
             navigateToFragment(FontSettingsFragment())
         }
-
+        
         view.findViewById<View>(R.id.btnThemeSettings).setOnClickListener {
             navigateToFragment(ThemeSettingsFragment())
         }
-
+        
         return view
     }
-
+    
     private fun navigateToFragment(fragment: Fragment) {
         val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)

@@ -11,7 +11,7 @@ import java.text.NumberFormat
 import java.util.*
 
 // Data class untuk tampilan Home
-data class TransactionDisplay(
+ data class TransactionDisplay(
     val title: String,
     val amount: Double,
     val date: String,
@@ -51,4 +51,4 @@ class TransactionDisplayAdapter(
     }
 
     override fun getItemCount(): Int = transactionList.size
-}
+} 

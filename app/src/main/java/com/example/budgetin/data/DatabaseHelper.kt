@@ -13,7 +13,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     companion object {
         private const val DATABASE_NAME = "budgetin.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -50,6 +50,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 type TEXT NOT NULL CHECK(type IN ('income', 'expense', 'goal')),
                 category_id INTEGER,
                 goal_id INTEGER,
+                message TEXT,
                 FOREIGN KEY (category_id) REFERENCES categories(id),
                 FOREIGN KEY (goal_id) REFERENCES goals(id)
             )
@@ -59,6 +60,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE transactions ADD COLUMN message TEXT")
+        }
         db.execSQL("DROP TABLE IF EXISTS transactions")
         db.execSQL("DROP TABLE IF EXISTS goals")
         db.execSQL("DROP TABLE IF EXISTS categories")
@@ -133,7 +137,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                     date = cursor.getString(cursor.getColumnIndexOrThrow("date")),
                     type = cursor.getString(cursor.getColumnIndexOrThrow("type")),
                     categoryId = cursor.getIntOrNull("category_id"),
-                    goalId = cursor.getIntOrNull("goal_id")
+                    goalId = cursor.getIntOrNull("goal_id"),
+                    message = cursor.getStringOrNull("message")
                 )
                 list.add(tx)
             } while (cursor.moveToNext())
@@ -151,13 +156,38 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             put("type", transaction.type)
             put("category_id", transaction.categoryId)
             put("goal_id", transaction.goalId)
+            put("message", transaction.message)
         }
         return db.insert("transactions", null, values)
+    }
+
+    fun updateTransaction(transaction: Transaction): Int {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put("title", transaction.title)
+            put("amount", transaction.amount)
+            put("date", transaction.date)
+            put("type", transaction.type)
+            put("category_id", transaction.categoryId)
+            put("goal_id", transaction.goalId)
+            put("message", transaction.message)
+        }
+        return db.update("transactions", values, "id = ?", arrayOf(transaction.id.toString()))
+    }
+
+    fun deleteTransaction(transactionId: Int): Int {
+        val db = writableDatabase
+        return db.delete("transactions", "id = ?", arrayOf(transactionId.toString()))
     }
 
     private fun Cursor.getIntOrNull(columnName: String): Int? {
         val idx = getColumnIndex(columnName)
         return if (isNull(idx)) null else getInt(idx)
+    }
+
+    private fun Cursor.getStringOrNull(columnName: String): String? {
+        val idx = getColumnIndex(columnName)
+        return if (isNull(idx)) null else getString(idx)
     }
 
     private fun insertDefaultCategories(db: SQLiteDatabase) {
@@ -173,7 +203,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             "Gaji" to "Revenue",
             "Untung Jualan" to "Revenue",
             "Bonus" to "Revenue",
-            "Pendapatan Lainnya" to "Revenue",
+            "Lainnya" to "Revenue",
             // Assets
             "Tabungan" to "Assets",
             "Investasi" to "Assets",

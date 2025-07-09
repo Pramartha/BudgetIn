@@ -1,123 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/bg_gradient"
     android:padding="0dp">
 
-    <LinearLayout
+    <!-- Judul -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Tambah Transaksi"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Card/Form putih membulat dengan background curved full height -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="0dp">
+        android:background="@drawable/bg_curved"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:clipToOutline="true"
+        android:layout_margin="16dp"
+        android:gravity="center_horizontal">
 
-        <!-- Card/Form putih membulat -->
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:padding="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:elevation="4dp"
-            android:clipToOutline="true"
-            android:backgroundTint="@android:color/white"
-            android:backgroundTintMode="src_in"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="center_horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
 
-            <!-- Tipe Transaksi -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tipe Transaksi"
-                android:textStyle="bold"
-                android:textColor="#0068FF"
-                android:layout_marginBottom="8dp"/>
-
-            <Spinner
-                android:id="@+id/spinner_type"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:layout_marginBottom="16dp"/>
+                android:orientation="vertical">
 
-            <!-- Kategori -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kategori"
-                android:textStyle="bold"
-                android:textColor="#0068FF"
-                android:layout_marginBottom="8dp"/>
+                <!-- Tipe Transaksi -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipe Transaksi"
+                    android:textStyle="bold"
+                    android:textColor="#0068FF"
+                    android:layout_marginBottom="8dp"/>
 
-            <Spinner
-                android:id="@+id/spinner_category"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
-                android:layout_marginBottom="16dp"/>
+                <Spinner
+                    android:id="@+id/spinner_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input"
+                    android:layout_marginBottom="14dp"/>
 
-            <!-- Tanggal -->
-            <EditText
-                android:id="@+id/et_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tanggal (yyyy-mm-dd)"
-                android:background="@drawable/bg_input"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"/>
+                <!-- Kategori -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori"
+                    android:textStyle="bold"
+                    android:textColor="#0068FF"
+                    android:layout_marginBottom="8dp"/>
 
-            <!-- Amount -->
-            <EditText
-                android:id="@+id/et_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Jumlah"
-                android:inputType="number"
-                android:layout_marginTop="12dp" />
+                <Spinner
+                    android:id="@+id/spinner_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input"
+                    android:layout_marginBottom="14dp"/>
 
-            <TextView
-                android:id="@+id/tv_amount_preview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rp0,00"
-                android:textSize="16sp"
-                android:textColor="#0068FF"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"/>
+                <!-- Tanggal -->
+                <EditText
+                    android:id="@+id/et_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Tanggal (yyyy-mm-dd)"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"/>
 
-            <!-- Title -->
-            <EditText
-                android:id="@+id/et_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Judul"
-                android:background="@drawable/bg_input"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"/>
+                <!-- Amount -->
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Jumlah"
+                    android:inputType="number"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp" />
 
-            <!-- Message -->
-            <EditText
-                android:id="@+id/et_message"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:hint="Pesan tambahan (opsional)"
-                android:background="@drawable/bg_input"
-                android:padding="12dp"
-                android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:id="@+id/tv_amount_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp0,00"
+                    android:textSize="16sp"
+                    android:textColor="#0068FF"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"/>
 
-            <!-- Tombol Simpan -->
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Simpan"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_button_rounded"/>
-        </LinearLayout>
+                <!-- Title -->
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Judul"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Message -->
+                <EditText
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="Pesan tambahan (opsional)"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="18dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Tombol Simpan -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Simpan"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:background="@drawable/bg_button_rounded"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

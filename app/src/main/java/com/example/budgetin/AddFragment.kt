@@ -121,6 +121,7 @@ class AddFragment : Fragment() {
                     type = typeDb,
                     categoryId = categoryId,
                     goalId = null,
+                    message = message
                 )
             )
 

@@ -7,5 +7,6 @@ data class Transaction(
     val date: String,
     val type: String,
     val categoryId: Int?,
-    val goalId: Int?
-)
+    val goalId: Int?,
+    val message: String? = null
+) : java.io.Serializable

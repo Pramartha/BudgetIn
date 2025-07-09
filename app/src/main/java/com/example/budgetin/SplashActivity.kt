@@ -15,11 +15,11 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val prefs = getSharedPreferences("BudgetInPrefs", MODE_PRIVATE)
             val username = prefs.getString("username", null)
-            val password = prefs.getString("password", null)
+            val hasPin = prefs.getBoolean("has_pin", false)
 
             val next = if (username == null) {
                 EnterNameActivity::class.java
-            } else if (password != null) {
+            } else if (hasPin) {
                 LoginActivity::class.java
             } else {
                 DashboardActivity::class.java

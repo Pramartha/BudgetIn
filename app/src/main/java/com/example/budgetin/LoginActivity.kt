@@ -17,17 +17,19 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btn_login)
 
         val prefs = getSharedPreferences("BudgetInPrefs", MODE_PRIVATE)
-        val savedPassword = prefs.getString("password", null)
+        val savedPin = prefs.getString("user_pin", null)
 
         btnLogin.setOnClickListener {
             val input = etPassword.text.toString().trim()
-
-            if (input == savedPassword) {
+            if (savedPin.isNullOrEmpty()) {
+                Toast.makeText(this, "Belum ada PIN terdaftar! Silakan buat PIN di menu Settings.", Toast.LENGTH_SHORT).show()
+            } else if (input.length != 5) {
+                Toast.makeText(this, "PIN harus 5 digit!", Toast.LENGTH_SHORT).show()
+            } else if (input == savedPin) {
                 startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
             } else {
-                // Salah password
-                Toast.makeText(this, "Password salah!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "PIN salah!", Toast.LENGTH_SHORT).show()
             }
         }
     }

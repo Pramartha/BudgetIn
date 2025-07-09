@@ -6,22 +6,32 @@
     android:background="@drawable/bg_gradient"
     android:padding="24dp">
 
-    <TextView
-        android:id="@+id/tvSettingsTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="32dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
     <!-- Menu Settings -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="638dp"
-        android:background="@drawable/bg_curved"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/bg_curved"
         android:padding="16dp">
 
         <!-- Notification Settings -->
@@ -29,26 +39,26 @@
             android:id="@+id/btnNotificationSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_notification" />
+                android:src="@drawable/ic_notification"
+                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Notification"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -66,26 +76,26 @@
             android:id="@+id/btnPinSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_lock" />
+                android:src="@drawable/ic_lock"
+                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="PIN"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -103,26 +113,26 @@
             android:id="@+id/btnFontSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_font" />
+                android:src="@drawable/ic_font"
+                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Font"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -140,26 +150,26 @@
             android:id="@+id/btnThemeSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_theme" />
+                android:src="@drawable/ic_theme"
+                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Theme"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
 
             <ImageView
                 android:layout_width="20dp"

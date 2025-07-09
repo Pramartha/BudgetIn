@@ -20,20 +20,21 @@
         android:layout_height="50dp" />
 
     <CheckBox
-        android:id="@+id/cb_use_password"
+        android:id="@+id/cb_use_pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-
-        android:text="Gunakan Password" />
+        android:text="Buat PIN untuk keamanan aplikasi" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/et_pin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:visibility="gone"
-        android:layout_marginBottom="24dp"/>
+        android:hint="Buat PIN (5 digit)"
+        android:inputType="numberPassword"
+        android:maxLength="5"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_submit"

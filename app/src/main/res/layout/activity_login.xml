@@ -7,7 +7,7 @@
     android:gravity="center">
 
     <TextView
-        android:text="Masukkan Password"
+        android:text="Masukkan PIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -15,7 +15,7 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:hint="Password"
+        android:hint="PIN"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
