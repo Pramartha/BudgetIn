@@ -122,6 +122,37 @@
                 android:layout_height="wrap_content"
                 android:checked="true" />
         </LinearLayout>
+        <!--Form Budget Allert -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isi Budget"
+            android:textStyle="bold"
+            android:textColor="#0068FF"
+            android:layout_marginBottom="8dp"/>
+        <!-- Amount -->
+        <EditText
+            android:id="@+id/frm_Allert"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Jumlah"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:layout_marginTop="4dp" />
+
+
+
+        <!-- Tombol Simpan -->
+        <Button
+            android:id="@+id/btn_save_settingnotif"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Simpan"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:background="@drawable/bg_button_rounded"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 
