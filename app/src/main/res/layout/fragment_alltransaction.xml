@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".ChartFragment">
 
     <!-- Area konten utama dengan gradient background -->
     <LinearLayout
@@ -57,8 +57,8 @@
             android:layout_height="wrap_content" />
 
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
+        <com.example.budgetin.CustomPieChart
+            android:id="@+id/custom_pie_chart"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="16dp"/>
@@ -84,7 +84,7 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/btnBack"
+                    android:id="@+id/icon1"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/icon_uang"
@@ -127,7 +127,7 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/btnBack"
+                    android:id="@+id/icon2"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/icon_uang"
@@ -169,7 +169,7 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/btnBack"
+                    android:id="@+id/icon3"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/icon_uang"
@@ -211,7 +211,7 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/btnBack"
+                    android:id="@+id/icon4"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/icon_uang"
@@ -253,7 +253,7 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:id="@+id/btnBack"
+                    android:id="@+id/icon5"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/icon_uang"
