@@ -91,7 +91,7 @@ class ChartFragment : Fragment() {
             "OUTCOME" -> transactions.filter { it.type.equals("expense", true) }
             "ASSET" -> transactions.filter { it.type.equals("goal", true) }
             else -> transactions
-        }
+        }.sortedByDescending { it.id }
         // Pie chart data
         val pieEntries = mutableListOf<PieEntry>()
         val colorList = mutableListOf<Int>()

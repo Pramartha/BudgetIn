@@ -145,38 +145,6 @@
             android:layout_height="1dp"
             android:background="#E0E0E0" />
 
-        <!-- Theme Settings -->
-        <LinearLayout
-            android:id="@+id/btnThemeSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_theme"
-                android:layout_marginEnd="16dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Theme"
-                android:textSize="16sp"
-                android:textColor="@android:color/black" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_arrow_right" />
-        </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

@@ -28,10 +28,6 @@ class SettingsFragment : Fragment() {
             navigateToFragment(FontSettingsFragment())
         }
         
-        view.findViewById<View>(R.id.btnThemeSettings).setOnClickListener {
-            navigateToFragment(ThemeSettingsFragment())
-        }
-        
         return view
     }
     

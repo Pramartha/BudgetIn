@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.budgetin.R
 import com.example.budgetin.data.model.Transaction
 import com.example.budgetin.data.DatabaseHelper
 import java.text.NumberFormat
@@ -83,6 +82,14 @@ class TransactionAdapter(
         holder.btnDelete.setOnClickListener {
             listener.onDelete(transaction)
         }
+
+        // Terapkan font global
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvTitle)
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvAmount)
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvDate)
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvType)
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvCategory)
+        FontUtil.applyFontSettings(holder.itemView.context, holder.tvMessage)
     }
 
     override fun getItemCount(): Int = transactionList.size

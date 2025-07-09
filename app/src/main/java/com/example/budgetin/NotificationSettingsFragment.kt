@@ -33,42 +33,26 @@ class NotificationSettingsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_notification_settings, container, false)
 
         /* 2. Bind view */
-        val swPush     = view.findViewById<SwitchCompat>(R.id.switchPushNotifications)
-        val swDaily    = view.findViewById<SwitchCompat>(R.id.switchDailyReminders)
+        // Hanya sisakan switchBudgetAlerts, frm_Allert, btn_save_settingnotif, btn_back
         val swBudget   = view.findViewById<SwitchCompat>(R.id.switchBudgetAlerts)
         val edtBudget  = view.findViewById<EditText>(R.id.frm_Allert)
         val btnSave    = view.findViewById<Button>(R.id.btn_save_settingnotif)
         val btnBack    = view.findViewById<ImageButton>(R.id.btn_back)
 
-        /* 3. Ambil SharedPreferences */
         val prefs = requireContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-
-        /* 4. Muat nilai yang tersimpan */
-        swPush.isChecked   = prefs.getBoolean(KEY_PUSH_NOTIF,  true)
-        swDaily.isChecked  = prefs.getBoolean(KEY_DAILY_REM,   true)
         swBudget.isChecked = prefs.getBoolean(KEY_BUDGET_ALRT, true)
-        edtBudget.setText(  prefs.getString (KEY_BUDGET_VALUE, "") )
+        edtBudget.setText(prefs.getString(KEY_BUDGET_VALUE, ""))
 
-        /* 5. Aksi tombol BACK */
         btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
-
-        /* 6. Aksi tombol SIMPAN */
         btnSave.setOnClickListener {
             prefs.edit()
-                .putBoolean(KEY_PUSH_NOTIF,   swPush.isChecked)
-                .putBoolean(KEY_DAILY_REM,    swDaily.isChecked)
                 .putBoolean(KEY_BUDGET_ALRT,  swBudget.isChecked)
                 .putString (KEY_BUDGET_VALUE, edtBudget.text.toString().trim())
                 .apply()
-
-            Toast.makeText(requireContext(),
-                "Pengaturan berhasil disimpan", Toast.LENGTH_SHORT).show()
-
-            /* Cek langsung setelah simpan */
+            Toast.makeText(requireContext(), "Pengaturan berhasil disimpan", Toast.LENGTH_SHORT).show()
             val currentBalance = Repository.getCurrentBalance(requireContext())
             checkBudgetAlert(requireContext(), currentBalance)
         }
-
         return view
     }
 

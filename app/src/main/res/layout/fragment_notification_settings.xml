@@ -44,62 +44,6 @@
         android:layout_margin="16dp"
         android:padding="16dp">
 
-        <!-- Push Notifications -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Push Notifications"
-                android:textSize="16sp"
-                android:textColor="@android:color/black" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchPushNotifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#E0E0E0" />
-
-        <!-- Daily Reminders -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Daily Reminders"
-                android:textSize="16sp"
-                android:textColor="@android:color/black" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchDailyReminders"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#E0E0E0" />
-
         <!-- Budget Alerts -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,39 +64,41 @@
                 android:id="@+id/switchBudgetAlerts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true" />
+                android:checked="false" />
         </LinearLayout>
-        <!--Form Budget Allert -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Isi Budget"
-            android:textStyle="bold"
-            android:textColor="#0068FF"
-            android:layout_marginBottom="8dp"/>
-        <!-- Amount -->
-        <EditText
-            android:id="@+id/frm_Allert"
+
+        <!-- Budget Value -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Jumlah"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:layout_marginTop="4dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Isi Budget"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
 
+            <EditText
+                android:id="@+id/frm_Allert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Masukkan nominal budget" />
+        </LinearLayout>
 
-        <!-- Tombol Simpan -->
         <Button
             android:id="@+id/btn_save_settingnotif"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:text="Simpan"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
             android:background="@drawable/bg_button_rounded"
-            android:layout_marginTop="8dp"/>
+            android:textColor="@android:color/white"
+            android:padding="12dp" />
 
     </LinearLayout>
 
